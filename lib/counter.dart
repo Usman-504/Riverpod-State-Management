@@ -31,7 +31,7 @@ class _CounterState extends ConsumerState<Counter> {
           Consumer(
             builder: (context, ref, child) {
               final count = ref.watch(number);
-              print('build2');
+              debugPrint('build2');
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -57,7 +57,7 @@ class _CounterState extends ConsumerState<Counter> {
           Consumer(
             builder: (context, ref, child) {
               final toggle = ref.watch(swithProvider);
-              print('build3');
+              debugPrint('build3');
               return Switch(
                 value: toggle,
                 onChanged: (value) {
