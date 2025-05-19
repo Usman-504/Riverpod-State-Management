@@ -9,8 +9,8 @@ class SearchView extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('RiverPod'),
+        backgroundColor: Colors.teal,
+        title: Text('State Notifier Provider'),
         centerTitle: true,
       ),
       body: Column(

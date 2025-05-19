@@ -10,8 +10,8 @@ class SliderView extends ConsumerWidget {
     debugPrint('build1');
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('RiverPod'),
+    backgroundColor: Colors.teal,
+        title: Text('State Provider'),
         centerTitle: true,
       ),
       body: Column(

@@ -10,33 +10,35 @@ final swithProvider = StateProvider<bool>((ref) {
   return false;
 });
 
-class Counter extends ConsumerStatefulWidget {
-  const Counter({super.key});
+class CounterView extends ConsumerStatefulWidget {
+  const CounterView({super.key});
 
   @override
-  ConsumerState<Counter> createState() => _CounterState();
+  ConsumerState<CounterView> createState() => _CounterState();
 }
 
-class _CounterState extends ConsumerState<Counter> {
+class _CounterState extends ConsumerState<CounterView> {
   @override
   Widget build(BuildContext context) {
-      return Scaffold(
+    return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('RiverPod'),
+         backgroundColor: Colors.teal,
+        title: Text('State Provider'),
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Consumer(
-            builder: (context, ref, child) {
-              final count = ref.watch(number);
-              debugPrint('build2');
-              return Center(
-                child: Column(
+      body: Consumer(
+        builder: (context, ref, child) {
+          final count = ref.watch(number);
+          debugPrint('build2');
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(count.toString(), style: TextStyle(fontSize: 30)),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 50,
                   children: [
-                    Text(count.toString(), style: TextStyle(fontSize: 30)),
                     ElevatedButton(
                       onPressed: () {
                         ref.read(number.notifier).state++;
@@ -51,25 +53,24 @@ class _CounterState extends ConsumerState<Counter> {
                     ),
                   ],
                 ),
-              );
-            },
-          ),
-          Consumer(
-            builder: (context, ref, child) {
-              final toggle = ref.watch(swithProvider);
-              debugPrint('build3');
-              return Switch(
-                value: toggle,
-                onChanged: (value) {
-                  ref.read(swithProvider.notifier).state = value;
-                },
-              );
-            },
-          ),
-        ],
+                Consumer(
+                  builder: (context, ref, child) {
+                    final toggle = ref.watch(swithProvider);
+                    debugPrint('build3');
+                    return Switch(
+                      value: toggle,
+                      onChanged: (value) {
+                        ref.read(swithProvider.notifier).state = value;
+                      },
+                    );
+                  },
+                ),
+              ],
+            ),
+          );
+        },
       ),
     );
-  
   }
 }
 

@@ -11,10 +11,11 @@ class FutureView extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue,
+     backgroundColor: Colors.teal,
         title: Text('Future Provider'),
       ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.refresh),
         onPressed: () {
           ref.invalidate(futureProvider);
         },
@@ -30,7 +31,6 @@ class FutureView extends ConsumerWidget {
               loading: () => const Center(child: CircularProgressIndicator()),
             ),
           );
-  
         },
       ),
     );

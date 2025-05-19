@@ -3,29 +3,29 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 /// Provider
 final text = Provider<String>((ref) {
-  return 'Usamn';
+  return 'Usman';
 });
 
 final number = Provider<int>((ref) {
   return 24;
 });
 
-class HomeScreen extends ConsumerStatefulWidget {
-  const HomeScreen({super.key});
+class HomeView extends ConsumerStatefulWidget {
+  const HomeView({super.key});
 
   @override
-  ConsumerState<HomeScreen> createState() => _HomeScreenState();
+  ConsumerState<HomeView> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends ConsumerState<HomeScreen> {
+class _HomeScreenState extends ConsumerState<HomeView> {
   @override
   Widget build(BuildContext context) {
     final name = ref.watch(text);
     final age = ref.watch(number);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('RiverPod'),
+         backgroundColor: Colors.teal,
+        title: Text('Provider'),
         centerTitle: true,
       ),
       body: Center(child: Text("$name $age", style: TextStyle(fontSize: 30))),

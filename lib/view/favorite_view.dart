@@ -10,13 +10,13 @@ class FavoriteView extends ConsumerWidget {
     final filteredList = ref.watch(itemsProvider);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('RiverPod'),
+        backgroundColor: Colors.teal,
+        title: Text('State Notifier Provider'),
         centerTitle: true,
         actions: [
           PopupMenuButton<String>(
-            onSelected: (value){
-                   ref.read(itemsProvider.notifier).favorite(value);
+            onSelected: (value) {
+              ref.read(itemsProvider.notifier).favorite(value);
             },
             itemBuilder: (context) {
               return const [

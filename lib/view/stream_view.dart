@@ -10,10 +10,11 @@ class StreamView extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.blue,
-        title: Text('Future Provider'),
+      backgroundColor: Colors.teal,
+        title: Text('Stream Provider'),
       ),
       floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.refresh),
         onPressed: () {
           ref.invalidate(streamProvider);
         },

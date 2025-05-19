@@ -10,8 +10,8 @@ class TodoView extends ConsumerWidget {
     final item = ref.watch(itemProvider);
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: Text('RiverPod'),
+        backgroundColor: Colors.teal,
+        title: Text('State Notifier Provider'),
         centerTitle: true,
       ),
       body:
