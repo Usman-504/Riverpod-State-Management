@@ -26,6 +26,7 @@ class SliderView extends ConsumerWidget {
               return Container(
                 height: 200,
                 width: 200,
+                // ignore: deprecated_member_use
                 color: Colors.red.withOpacity(slider),
               );
             },
